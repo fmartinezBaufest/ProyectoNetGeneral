@@ -1,0 +1,96 @@
+﻿@model PaginacionRespuesta<PersonaDto>;
+
+<script src="~/js/reporte.js"></script>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>DNI</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var persona in Model.Elementos)
+            {
+                <tr class="mi-fila">
+                    <td>@Html.DisplayFor(modelItem => persona.Id)</td>
+                    <td>@Html.DisplayFor(modelItem => persona.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => persona.LastName)</td>
+                    <td>@Html.DisplayFor(modelItem => persona.Dni)</td>
+                    <td>@Html.DisplayFor(modelItem => persona.Age)</td>
+
+                <td>
+
+                    <a class="link-opacity-10-hover a-editar" data-id="@persona.Id" pepe="hola pepin">ver</a>
+                </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+@Html.Partial("_PaginationView")
+
+
+    <input class="btn btn-primary" type="button" value="Exportar" />
+
+<!-- Modal -->
+<div class="modal fade" id="detallePersonaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detalles de Persona</h5>
+               
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="nombrePersona">Nombre:</label>
+                        <input type="text" class="form-control" id="nombrePersona">
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidoPersona">Apellido:</label>
+                        <input type="text" class="form-control" id="apellidoPersona">
+                    </div>
+                    <div class="form-group">
+                        <label for="dniPersona">DNI:</label>
+                        <input type="text" class="form-control" id="dniPersona">
+                    </div>
+                    <div class="form-group">
+                        <label for="edadPersona">Edad:</label>
+                        <input type="text" class="form-control" id="edadPersona">
+                    </div>
+                    <input type="hidden" id="idPersona" name="idPersona" value="">
+                </form>
+                <p id="errorMensaje" class="text-danger"></p>
+            </div>
+
+
+            @* <div class="modal-body">
+                <p><strong>Nombre:</strong> <span id="nombrePersona"></span></p>
+                <p><strong>Apellido:</strong> <span id="apellidoPersona"></span></p>
+                <p><strong>DNI:</strong> <span id="dniPersona"></span></p>
+                <p><strong>Edad:</strong> <span id="edadPersona"></span></p>
+                <p id="errorMensaje" class="text-danger"></p>
+            </div> *@
+            <div class="modal-footer">
+                <button id="btnModalClose" type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button id="btnModalUpdate" type="button" class="btn btn-secondary" data-dismiss="modal">Actualizar</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+    .mi-fila:hover {
+        background-color: #ADD8E6;
+    }
+</style>
+

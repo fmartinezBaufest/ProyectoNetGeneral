@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\inetpub\wwwroot\FirstAppEf</_PublishTargetUrl>
+    <History>True|2023-10-16T02:38:11.6947494Z;True|2023-10-15T23:35:56.3149273-03:00;True|2023-10-15T23:20:59.6219751-03:00;True|2023-10-15T23:20:16.2588623-03:00;True|2023-10-15T23:17:09.4441295-03:00;True|2023-10-15T23:13:30.9821583-03:00;True|2023-10-08T15:16:40.5578228-03:00;True|2023-09-27T18:06:17.9334376-03:00;False|2023-09-27T18:05:32.4847840-03:00;True|2023-09-27T17:54:51.2868141-03:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

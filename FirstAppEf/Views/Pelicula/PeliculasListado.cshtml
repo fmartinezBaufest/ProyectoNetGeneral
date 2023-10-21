@@ -1,0 +1,29 @@
+﻿@model IEnumerable<PeliculaDto>
+@{
+}
+
+<link rel="stylesheet" href="~/css/peliculasListado.css" asp-append-version="true" />
+
+<div class="container">
+    <div class="row rows-cols-1 row-cols-md-3 g-3">
+        
+        @foreach (var pelicula in Model)
+        {
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="data:image/png;base64,@Convert.ToBase64String(pelicula.ImageBytes)" class="card-img-top cardsPeliculaImagen mx-auto mt-2" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">@pelicula.Nombre</h5>
+                        <p>Año de estreno: @pelicula.Anio</p>
+                        <p class="card-text">Genero: @pelicula.Genero</p>
+                        <a href="#" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        }
+      
+       
+            
+          </div>
+    
+</div>

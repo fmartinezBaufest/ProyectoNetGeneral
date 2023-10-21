@@ -1,0 +1,7 @@
+C:\Fernando\Pruebas-Net\FirstAppEf\WcfService1\bin\WcfService1.dll.config
+C:\Fernando\Pruebas-Net\FirstAppEf\WcfService1\bin\WcfService1.dll
+C:\Fernando\Pruebas-Net\FirstAppEf\WcfService1\bin\WcfService1.pdb
+C:\Fernando\Pruebas-Net\FirstAppEf\WcfService1\obj\Debug\WcfService1.csproj.AssemblyReference.cache
+C:\Fernando\Pruebas-Net\FirstAppEf\WcfService1\obj\Debug\WcfService1.csproj.CoreCompileInputs.cache
+C:\Fernando\Pruebas-Net\FirstAppEf\WcfService1\obj\Debug\WcfService1.dll
+C:\Fernando\Pruebas-Net\FirstAppEf\WcfService1\obj\Debug\WcfService1.pdb

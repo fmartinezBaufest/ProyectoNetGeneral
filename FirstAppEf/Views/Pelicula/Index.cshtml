@@ -1,0 +1,75 @@
+﻿
+@model FirstAppEf.Models.PeliculaDto
+
+<h3>Ingreso de pelicula</h3>
+
+<form method="post" action="/Pelicula/IngresoPelicula" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Nombre"></label>
+        <input asp-for="Nombre" class="form-control" />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="GeneroId">Seleccionar Género</label>
+        <select id="generoSelect" asp-for="GeneroId" class="form-control">
+            <option value="">-- Seleccione un género --</option>
+           
+        </select>
+        <span asp-validation-for="GeneroId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Anio"></label>
+        <input asp-for="Anio" class="form-control" />
+        <span asp-validation-for="Anio" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-2">
+        <label asp-for="Image">Subir imagen</label>
+        <input asp-for="Image" type="file" class="form-control-file" />
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+
+   
+
+    <button type="submit" class="btn btn-primary mt-4">Guardar</button>
+</form>
+
+<script>
+    $(document).ready(function () {
+        // Realizar la consulta AJAX al cargar la página
+        $.ajax({
+            url: '/Pelicula/ObtenerGeneros', // Reemplaza 'TuControlador' con el nombre de tu controlador
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                // Manejar la respuesta exitosa
+                // Manejar la respuesta exitosa
+                if (data && data.length > 0) {
+                    var selectGenero = $('#generoSelect');
+                    selectGenero.empty(); // Vacía el select
+
+                    selectGenero.append($('<option>', {
+                        value: '',
+                        text: '-- Seleccione un género --'
+                    }));
+
+                    $.each(data, function (index, genero) {
+                        selectGenero.append($('<option>', {
+                            value: genero.id,
+                            text: genero.nombre
+                        }));
+                    });
+                } else {
+                    $('#generoSelect').html('No se encontraron géneros.');
+                }
+             
+            },
+            error: function () {  // Manejar errores de la consulta
+                $('#generoSelect').html('Error al cargar los géneros.');
+
+            }
+        });
+    });
+</script>

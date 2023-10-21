@@ -1,0 +1,26 @@
+﻿@model PaginacionRespuesta<PersonaDto>;
+
+    @{
+        var plantillaLink = string.Concat("/Reports", "?pagina={0}, recordsPorPagina={1}");
+    }
+
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item @(Model.Pagina == 1 ? "disabled" : null)">
+            <a class="page-link" href="@Url.Action("Index", new { pagina = Model.Pagina-1, recordsPorPagina = Model.RecordsPorPagina })">
+                Previous</a></li>
+        
+        @for (int pagina = 1; pagina <= Model.CantidadDePaginas; pagina++)
+        {
+            <li class="page-item @(pagina == Model.Pagina ? "active" : null)">
+                
+                <a class="page-link" href="@Url.Action("Index", new { pagina = pagina, recordsPorPagina = Model.RecordsPorPagina })">@pagina</a>
+
+            </li>
+        }
+        <li class="page-item @(Model.Pagina == Model.CantidadDePaginas ? "disabled" : null)">
+            <a class="page-link" href="@Url.Action("Index", new { pagina = Model.Pagina+1, recordsPorPagina = Model.RecordsPorPagina })">Next</a>
+        </li>
+    </ul>
+</nav>

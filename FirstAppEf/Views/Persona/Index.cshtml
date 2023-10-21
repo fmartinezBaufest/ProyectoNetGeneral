@@ -1,0 +1,54 @@
+﻿@model PersonaDto
+
+@{
+    ViewData["Title"] = "Persona";
+
+
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div id="alertError" class="alert alert-danger">
+        @ViewBag.ErrorMessage
+    </div>
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.Success))
+{
+    <div id="alertSuccess" class="alert alert-success fade show">
+        @ViewBag.Success
+    </div>
+}
+
+<h3>Ingreso de persona</h3>
+
+<form id="miFormulario" asp-action="Crear" asp-validation-summary="All">
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" asp-for="Name"  class="form-control" id="nombre" placeholder="Enter nombre" />
+        <span class="text-danger" asp-validation-for="Name"></span>
+
+    </div>
+    <div class="form-group">
+        <label for="apellido">Apellido</label>
+        <input type="text" asp-for="LastName" class="form-control" id="apellido" placeholder="Enter apellido" />
+        <span class="text-danger" asp-validation-for="LastName"></span>
+    </div>
+    <div class="form-group">
+        <label for="dni">Dni</label>
+        <input type="text" asp-for="Dni" class="form-control" id="dni" placeholder="Enter dni" />
+        <span class="text-danger" asp-validation-for="Dni"></span>
+    </div>
+    <div class="form-group">
+        <label for="edad">Edad</label>
+        <input type="text" asp-for="Age" class="form-control" id="edad" placeholder="Enter edad" />
+        <span class="text-danger" asp-validation-for="Age"></span>
+    </div>
+    
+    <button type="submit" class="btn btn-primary mt-1">Submit</button>
+</form>
+
+        @section scripts{
+            <script src="~/js/persona.js">      
+            </script>
+        }
