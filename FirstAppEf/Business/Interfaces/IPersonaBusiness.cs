@@ -12,5 +12,6 @@ namespace FirstAppEf.Business.Interfaces
 
         PersonaDto Actualizar(PersonaDto persona);
         int GetTotalPersonas();
+        void DeletePersona(int id);
     }
 }

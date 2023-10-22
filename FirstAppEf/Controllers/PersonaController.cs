@@ -81,7 +81,25 @@ namespace FirstAppEf.Controllers
 
             
         }
-        
+
+        [HttpPost]
+        public async Task<ActionResult> DeletePersona([FromBody] int id)
+        {
+            try
+            {
+                this.PersonaBusiness.DeletePersona(id);
+
+                return Json("La persona fue eliminada");
+            }
+            catch (Exception ex)
+            {
+
+                return Json("hubo un error");
+            }
+        }
+
+
+
 
     }
 }

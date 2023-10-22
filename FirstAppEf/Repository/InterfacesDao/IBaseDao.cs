@@ -10,5 +10,6 @@ namespace FirstAppEf.Repository.InterfacesDao
         TEntityDto Add(TEntityDto entity);
         TEntityDto GetById(int id);
         TEntityDto Update(TEntityDto entity, int id);
+        void Delete(int id);
     }
 }
