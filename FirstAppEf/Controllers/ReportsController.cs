@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 
 namespace FirstAppEf.Controllers
 {
@@ -120,6 +121,29 @@ namespace FirstAppEf.Controllers
             return Json(result);
         }
 
-        
+        [HttpGet]
+        public async Task<ActionResult> FindPersons(PaginacionViewModel p)
+        {            
+
+            var result = this.PersonaBusiness.FindPagination(p);
+
+            var result2 = this.PersonaBusiness.FindByData(p.TextoDeBusqueda).Count();
+
+            var countReg = this.PersonaBusiness.GetTotalPersonas();
+
+            var paginacionRespuesta = new PaginacionRespuesta<PersonaDto>
+            {
+                CantidadTotalDeRecords = result2,
+                Elementos = result,
+                Pagina = p.Pagina,
+                TextoDeBusqueda = p.TextoDeBusqueda,
+            };
+
+            return View("Index", paginacionRespuesta);
+
+
+        }
+
+
     }
 }

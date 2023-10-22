@@ -25,9 +25,14 @@ namespace FirstAppEf.Repository.Dao
             return this.Mapper.Map<TEntity, TEntityDto>(res);
         }
 
-        public IEnumerable<TEntityDto> GetAll(params Expression<Func<TEntity, object>>[] includes)
+        public IEnumerable<TEntityDto> GetAll(string includeProperties = "")
         {
-            return this.Mapper.Map<IEnumerable<TEntity>, IEnumerable<TEntityDto>>(this.Repository.GetAll(includes));
+            return this.Mapper.Map<IEnumerable<TEntity>, IEnumerable<TEntityDto>>(this.Repository.GetAll(includeProperties));
+        }
+
+        public IEnumerable<TEntityDto> Find(Expression<Func<TEntity, bool>> condition, string includeProperties = "")
+        {
+            return this.Mapper.Map<IEnumerable<TEntity>, IEnumerable<TEntityDto>>(this.Repository.List(condition, includeProperties));
         }
 
         public IEnumerable<TEntityDto> GetAll()

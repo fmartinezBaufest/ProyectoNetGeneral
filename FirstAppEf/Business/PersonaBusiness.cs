@@ -4,6 +4,8 @@ using FirstAppEf.Models;
 using FirstAppEf.Repository.Dao;
 using FirstAppEf.Repository.Entities;
 using FirstAppEf.Repository.InterfacesDao;
+using Microsoft.IdentityModel.Tokens;
+using System.Linq;
 
 namespace FirstAppEf.Business
 {
@@ -35,7 +37,10 @@ namespace FirstAppEf.Business
         }
         public IEnumerable<PersonaDto> GetAllPaginado(PaginacionViewModel paginacionViewModel)
         {
-            return this.personaDao.GetAll().OrderByDescending(p => p.Id).Skip(paginacionViewModel.recordsASaltar).Take(paginacionViewModel.recordsPorPagina);
+            return this.personaDao.GetAll()
+                .OrderByDescending(p => p.Id)
+                .Skip(paginacionViewModel.recordsASaltar)
+                .Take(paginacionViewModel.recordsPorPagina);
         }
 
         public PersonaDto GetPersonById(int id)
@@ -60,12 +65,36 @@ namespace FirstAppEf.Business
             return this.personaDao.GetAll().Count();
         }
 
+
         public void DeletePersona(int id)
         {
             this.personaDao.Delete(id);
 
         }
 
-        
+        public IEnumerable<PersonaDto> FindPagination(PaginacionViewModel paginacionViewModel)
+        {
+            return !paginacionViewModel.TextoDeBusqueda.IsNullOrEmpty() ? this.personaDao.Find(x => x.Name.Contains(paginacionViewModel.TextoDeBusqueda)
+                || x.LastName.Contains(paginacionViewModel.TextoDeBusqueda)
+                || x.Age.Contains(paginacionViewModel.TextoDeBusqueda)
+                || x.Dni.Contains(paginacionViewModel.TextoDeBusqueda)).OrderByDescending(p => p.Id)
+                .Skip(paginacionViewModel.recordsASaltar)
+                .Take(paginacionViewModel.recordsPorPagina) : this.personaDao.GetAll().OrderByDescending(p => p.Id)
+                                                                .Skip(paginacionViewModel.recordsASaltar)
+                                                                .Take(paginacionViewModel.recordsPorPagina);
+
+
+        }
+
+        public IEnumerable<PersonaDto> FindByData(string data)
+        {
+            return !data.IsNullOrEmpty() ? this.personaDao.Find(x => x.Name.Contains(data)
+                || x.LastName.Contains(data)
+                || x.Age.Contains(data)
+                || x.Dni.Contains(data)).OrderByDescending(p => p.Id) : this.personaDao.GetAll();
+
+        }
+
+
     }
 }

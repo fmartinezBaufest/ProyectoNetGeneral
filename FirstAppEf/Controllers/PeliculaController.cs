@@ -51,12 +51,17 @@ namespace FirstAppEf.Controllers
             return Json(generos);
         }
 
-        public IActionResult MostrarPeliculas()
+        public IActionResult MostrarPeliculas(string name)
         {
-            var peliculas = this.PeliculaBusiness.GetPeliculas();
+            var peliculas = this.PeliculaBusiness.GetPeliculas(name);
             return View("PeliculasListado", peliculas);
         }
 
-        
+        [HttpGet]
+        public async Task<ActionResult> GetPeliculaByName(string name)
+        {
+            var peliculas =  name != null ? this.PeliculaBusiness.GetPeliculasByName(name) : this.PeliculaBusiness.GetPeliculas(name);
+            return View("PeliculasListado", peliculas);
+        }
     }
 }

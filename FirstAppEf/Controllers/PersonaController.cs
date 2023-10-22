@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FirstAppEf.Business.ExceptionDni;
 using FirstAppEf.Business.Interfaces;
+using FirstAppEf.Migrations;
 using FirstAppEf.Models;
 using FirstAppEf.Repository.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -97,6 +98,8 @@ namespace FirstAppEf.Controllers
                 return Json("hubo un error");
             }
         }
+
+        
 
 
 

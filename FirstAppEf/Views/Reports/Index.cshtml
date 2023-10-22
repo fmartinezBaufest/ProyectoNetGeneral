@@ -7,7 +7,17 @@
     <h1>@ViewBag.error</h1>
 }
 
-
+<div class="container mb-4 mt-2">
+    <h3>Búsqueda</h3>
+    <form asp-action="FindPersons" method="GET">
+        <div class="input-group">
+            <input type="text" class="form-control" name="TextoDeBusqueda" placeholder="Escribe tu búsqueda">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">Buscar</button>
+            </div>
+        </div>
+    </form>
+</div>
     <table class="table">
         <thead>
             <tr>

@@ -4,6 +4,17 @@
 
 <link rel="stylesheet" href="~/css/peliculasListado.css" asp-append-version="true" />
 
+<div class="container mb-4 mt-2">
+    <h3>Buscar pelicula</h3>
+    <form action="/Pelicula/GetPeliculaByName" method="GET">
+        <div class="input-group">
+            <input id="buscarPeliculaInp-d" type="text" class="form-control" name="name" placeholder="Escribe tu búsqueda">
+            <div class="input-group-append">
+                <button id="buscarPeliculaBtn-d" class="btn btn-primary" type="submit">Buscar</button>
+            </div>
+        </div>
+    </form>
+</div>
 <div class="container">
     <div class="row rows-cols-1 row-cols-md-3 g-3">
         
@@ -27,3 +38,9 @@
           </div>
     
 </div>
+
+@section scripts{
+    <script src="~/js/pelicula.js">
+
+    </script>
+        }

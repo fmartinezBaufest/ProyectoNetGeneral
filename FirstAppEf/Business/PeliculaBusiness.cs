@@ -37,9 +37,14 @@ namespace FirstAppEf.Business
             return this.generoDao.GetAll();
         }
 
-        public IEnumerable<PeliculaDto> GetPeliculas()
+        public IEnumerable<PeliculaDto> GetPeliculas(string name)
         {
-            return this.PeliculaDao.GetAll(x => x.Genero);
+            return this.PeliculaDao.GetAll("Genero");
+        }
+
+        public IEnumerable<PeliculaDto> GetPeliculasByName(string name)
+        {
+            return this.PeliculaDao.Find(condition: x => x.Nombre.Contains(name), includeProperties: "Genero");
         }
     }
 }

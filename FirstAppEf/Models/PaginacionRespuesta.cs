@@ -4,6 +4,8 @@ namespace FirstAppEf.Models
 {
     public class PaginacionRespuesta<T>
     {
+        public  string TextoDeBusqueda { get; set; }
+
         public IEnumerable<T> Elementos { get; set; }
 
         public int Pagina { get; set; }

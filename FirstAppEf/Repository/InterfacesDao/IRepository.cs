@@ -6,10 +6,10 @@ namespace FirstAppEf.Repository.InterfacesDao
     {
         public interface IRepository<TEntity> where TEntity : class
         {
-            IQueryable<TEntity> GetAll(params Expression<Func<TEntity, object>>[] includes);
+            IQueryable<TEntity> GetAll(string includeProperties = "");
             IQueryable<TEntity> GetAll();
             TEntity Insert(TEntity entity);
-            IQueryable<TEntity> List(Expression<Func<TEntity, bool>> condition, params Expression<Func<TEntity, object>>[] includes);
+            IQueryable<TEntity> List(Expression<Func<TEntity, bool>> condition, string includeProperties = "");
             TEntity GetById(int id);
             void Save();
             void Delete(TEntity entity);

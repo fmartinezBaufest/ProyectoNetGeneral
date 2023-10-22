@@ -18,16 +18,14 @@ namespace FirstAppEf.Repository.Dao
             Entities = Context.Set<TEntity>();
             this.Mapper = mapper;
         }
-        public IQueryable<TEntity> GetAll(params Expression<Func<TEntity, object>>[] includes)
+        public IQueryable<TEntity> GetAll(string includeProperties = "")
         {
             var query = Entities.AsQueryable();
 
-            if (includes != null)
+            foreach (var includeProperty in includeProperties.Split
+                (new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
             {
-                foreach (var include in includes)
-                {
-                    query = query.Include(include);
-                }
+                query = query.Include(includeProperty);
             }
 
             return query;
@@ -44,17 +42,15 @@ namespace FirstAppEf.Repository.Dao
             return result.Entity;
         }
 
-        public IQueryable<TEntity> List(Expression<Func<TEntity, bool>> condition, params Expression<Func<TEntity, object>>[] includes)
+        public IQueryable<TEntity> List(Expression<Func<TEntity, bool>> condition, string includeProperties = "")
         {
 
             var query = Entities.Where(condition);
 
-            if (includes != null)
+            foreach (var includeProperty in includeProperties.Split
+                (new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
             {
-                foreach (var include in includes)
-                {
-                    query = query.Include(include);
-                }
+                query = query.Include(includeProperty);
             }
 
             return query;

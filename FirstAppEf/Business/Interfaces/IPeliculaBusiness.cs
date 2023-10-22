@@ -6,6 +6,7 @@ namespace FirstAppEf.Business.Interfaces
     {
         PeliculaDto Crear(PeliculaDto pelicula);
         IEnumerable<GeneroDto> GetGeneros();
-        IEnumerable<PeliculaDto> GetPeliculas();
+        IEnumerable<PeliculaDto> GetPeliculas(string name);
+        IEnumerable<PeliculaDto> GetPeliculasByName(string name);
     }
 }

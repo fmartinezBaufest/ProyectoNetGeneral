@@ -8,19 +8,19 @@
 <nav aria-label="Page navigation example">
     <ul class="pagination">
         <li class="page-item @(Model.Pagina == 1 ? "disabled" : null)">
-            <a class="page-link" href="@Url.Action("Index", new { pagina = Model.Pagina-1, recordsPorPagina = Model.RecordsPorPagina })">
+            <a class="page-link" href="@Url.Action("FindPersons", new { pagina = Model.Pagina-1, recordsPorPagina = Model.RecordsPorPagina, TextoDeBusqueda = Model.TextoDeBusqueda })">
                 Previous</a></li>
         
         @for (int pagina = 1; pagina <= Model.CantidadDePaginas; pagina++)
         {
             <li class="page-item @(pagina == Model.Pagina ? "active" : null)">
-                
-                <a class="page-link" href="@Url.Action("Index", new { pagina = pagina, recordsPorPagina = Model.RecordsPorPagina })">@pagina</a>
+
+                <a class="page-link" href="@Url.Action("FindPersons", new { pagina = pagina, recordsPorPagina = Model.RecordsPorPagina, TextoDeBusqueda = Model.TextoDeBusqueda })">@pagina</a>
 
             </li>
         }
         <li class="page-item @(Model.Pagina == Model.CantidadDePaginas ? "disabled" : null)">
-            <a class="page-link" href="@Url.Action("Index", new { pagina = Model.Pagina+1, recordsPorPagina = Model.RecordsPorPagina })">Next</a>
+            <a class="page-link" href="@Url.Action("FindPersons", new { pagina = Model.Pagina+1, recordsPorPagina = Model.RecordsPorPagina, TextoDeBusqueda = Model.TextoDeBusqueda })">Next</a>
         </li>
     </ul>
 </nav>
