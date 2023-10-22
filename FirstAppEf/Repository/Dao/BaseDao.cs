@@ -49,6 +49,16 @@ namespace FirstAppEf.Repository.Dao
             return entity;
         }
 
+        public void Delete(int id)
+        {
+            var entityBd = this.Repository.GetById(id);
+
+            this.Repository.Delete(entityBd);
+
+            this.Repository.Save();
+
+        }
+
 
     }
 }

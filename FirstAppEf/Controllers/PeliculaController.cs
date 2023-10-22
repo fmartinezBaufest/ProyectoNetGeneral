@@ -56,5 +56,7 @@ namespace FirstAppEf.Controllers
             var peliculas = this.PeliculaBusiness.GetPeliculas();
             return View("PeliculasListado", peliculas);
         }
+
+        
     }
 }

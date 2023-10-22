@@ -80,6 +80,33 @@
 
     })
 
+    $('#btnModalDelete').click(function () {
+
+        $.ajax({
+           
+            url: "/Persona/DeletePersona", // La URL de la acción en tu controlador
+            type: "POST",
+            contentType: "application/json",
+            data: $("#idPersona").val(), // Enviar el ID como parámetro
+            success: function (data) {
+
+                alert(data);
+             
+                window.location.href = "/Reports/Index";
+            },
+            error: function () {
+                // Manejar errores aquí
+                console.error("Error en la solicitud AJAX.");
+              
+
+            }
+        });
+           
+       
+
+    })
+
+    $(".link-opacity-10-hover").css("cursor", "pointer");
 });
 
 function editarPersona(p) {

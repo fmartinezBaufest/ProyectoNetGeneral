@@ -12,6 +12,7 @@ namespace FirstAppEf.Repository.InterfacesDao
             IQueryable<TEntity> List(Expression<Func<TEntity, bool>> condition, params Expression<Func<TEntity, object>>[] includes);
             TEntity GetById(int id);
             void Save();
+            void Delete(TEntity entity);
         }
     }
 }

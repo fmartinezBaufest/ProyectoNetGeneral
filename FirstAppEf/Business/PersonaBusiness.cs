@@ -35,7 +35,7 @@ namespace FirstAppEf.Business
         }
         public IEnumerable<PersonaDto> GetAllPaginado(PaginacionViewModel paginacionViewModel)
         {
-            return this.personaDao.GetAll().Skip(paginacionViewModel.recordsASaltar).Take(paginacionViewModel.recordsPorPagina).OrderBy(x => x.Id);
+            return this.personaDao.GetAll().OrderByDescending(p => p.Id).Skip(paginacionViewModel.recordsASaltar).Take(paginacionViewModel.recordsPorPagina);
         }
 
         public PersonaDto GetPersonById(int id)
@@ -58,6 +58,12 @@ namespace FirstAppEf.Business
         public int GetTotalPersonas()
         {
             return this.personaDao.GetAll().Count();
+        }
+
+        public void DeletePersona(int id)
+        {
+            this.personaDao.Delete(id);
+
         }
 
         

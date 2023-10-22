@@ -2,6 +2,12 @@
 
 <script src="~/js/reporte.js"></script>
 
+@if (@ViewBag.error != null)
+{
+    <h1>@ViewBag.error</h1>
+}
+
+
     <table class="table">
         <thead>
             <tr>
@@ -78,7 +84,7 @@
                 <p id="errorMensaje" class="text-danger"></p>
             </div> *@
             <div class="modal-footer">
-                <button id="btnModalClose" type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button id="btnModalDelete" type="button"  class="btn btn-secondary" data-dismiss="modal">Eliminar</button>
                 <button id="btnModalUpdate" type="button" class="btn btn-secondary" data-dismiss="modal">Actualizar</button>
 
             </div>

@@ -65,6 +65,11 @@ namespace FirstAppEf.Repository.Dao
             return this.Entities.Find(id);
         }
 
+        public void Delete(TEntity entity)
+        {
+            this.Entities.Remove(entity);
+        }
+
         public void Save()
         {
             Context.SaveChanges();
