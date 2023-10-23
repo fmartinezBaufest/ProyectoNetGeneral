@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstAppEf", "FirstAppEf\Fi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfService1", "WcfService1\WcfService1.csproj", "{5172B639-3261-4BD9-987A-BDEDBB8580B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{5D729C84-14C7-42A4-A003-532C770A6D15}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,14 @@ Global
 		{5172B639-3261-4BD9-987A-BDEDBB8580B5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5172B639-3261-4BD9-987A-BDEDBB8580B5}.Release|x86.ActiveCfg = Release|Any CPU
 		{5172B639-3261-4BD9-987A-BDEDBB8580B5}.Release|x86.Build.0 = Release|Any CPU
+		{5D729C84-14C7-42A4-A003-532C770A6D15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D729C84-14C7-42A4-A003-532C770A6D15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D729C84-14C7-42A4-A003-532C770A6D15}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5D729C84-14C7-42A4-A003-532C770A6D15}.Debug|x86.Build.0 = Debug|Any CPU
+		{5D729C84-14C7-42A4-A003-532C770A6D15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D729C84-14C7-42A4-A003-532C770A6D15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D729C84-14C7-42A4-A003-532C770A6D15}.Release|x86.ActiveCfg = Release|Any CPU
+		{5D729C84-14C7-42A4-A003-532C770A6D15}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
