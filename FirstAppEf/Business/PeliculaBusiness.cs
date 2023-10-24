@@ -46,5 +46,15 @@ namespace FirstAppEf.Business
         {
             return this.PeliculaDao.Find(condition: x => x.Nombre.Contains(name), includeProperties: "Genero");
         }
+
+        public PeliculaDto GetPeliculaById(int id)
+        {
+            return this.PeliculaDao.GetOneBy(x => x.Id == id, "Genero");
+        }
+
+        public PeliculaDto GetPeliculaByName(string nombre)
+        {
+            return this.PeliculaDao.GetOneBy(x => x.Nombre.Contains(nombre), "Genero");
+        }
     }
 }

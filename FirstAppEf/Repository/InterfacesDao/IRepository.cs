@@ -13,6 +13,7 @@ namespace FirstAppEf.Repository.InterfacesDao
             TEntity GetById(int id);
             void Save();
             void Delete(TEntity entity);
+            TEntity GetOneBy(Expression<Func<TEntity, bool>> condition, string includeProperties = "");
         }
     }
 }

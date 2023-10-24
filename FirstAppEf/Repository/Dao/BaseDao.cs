@@ -41,6 +41,11 @@ namespace FirstAppEf.Repository.Dao
 
         }
 
+        public TEntityDto GetOneBy(Expression<Func<TEntity, bool>> condition, string includeProperties = "")
+        {
+            return this.Mapper.Map<TEntity, TEntityDto>(this.Repository.GetOneBy(condition, includeProperties));
+        }
+
         public TEntityDto GetById(int id)
         {
             return this.Mapper.Map<TEntity, TEntityDto>(this.Repository.GetById(id));

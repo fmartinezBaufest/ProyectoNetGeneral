@@ -75,5 +75,19 @@ namespace FirstAppEf.Repository.Dao
         {
             return this.Entities;
         }
+
+        public TEntity GetOneBy(Expression<Func<TEntity, bool>> condition, string includeProperties = "")
+        {
+
+            IQueryable<TEntity> query = this.Entities;
+
+            foreach (var includeProperty in includeProperties.Split
+                (new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                query = query.Include(includeProperty);
+            }
+
+            return query.SingleOrDefault(condition);
+        }
     }
 }

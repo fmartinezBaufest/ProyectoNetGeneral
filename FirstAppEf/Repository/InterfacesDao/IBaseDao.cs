@@ -12,5 +12,6 @@ namespace FirstAppEf.Repository.InterfacesDao
         TEntityDto Update(TEntityDto entity, int id);
         void Delete(int id);
         IEnumerable<TEntityDto> Find(Expression<Func<TEntity, bool>> condition, string includeProperties = "");
+        TEntityDto GetOneBy(Expression<Func<TEntity, bool>> condition, string includeProperties = "");
     }
 }

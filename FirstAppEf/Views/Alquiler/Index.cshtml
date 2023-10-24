@@ -1,0 +1,17 @@
+﻿@model AlquilerViewModel;
+
+<div>
+    <h1>Alquilar</h1>
+    <label>@Model.Pelicula.Nombre</label>
+    <label>@Model.Pelicula.Anio</label>
+    <label>@Model.Pelicula.Genero</label>
+</div>
+
+<input id="searchInput" type="text">
+<ul id="suggestions"></ul>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+@section Scripts{
+    <script src="~/js/alquiler.js"> </script>
+}

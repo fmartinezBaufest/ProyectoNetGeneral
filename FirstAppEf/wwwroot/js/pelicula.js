@@ -10,7 +10,7 @@ $(document).ready(function () {
             url: "/Pelicula/GetPeliculaByName", // La URL de la acción en tu controlador
             type: "GET",
             contentType: "application/json",
-            data: { name: datoABuscar }, // Enviar el ID como parámetro
+            data: { name: datoABuscar },
             success: function (data) {
 
                console.log(data)
