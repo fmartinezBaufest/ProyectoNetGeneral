@@ -40,7 +40,8 @@ namespace FirstAppEf.Controllers
             }
            var result = this.PersonaBusiness.FindByData(datoBusqueda).Take(10);
 
-            return Json(result);
+            return Ok(new { data = result });
+            //return Json(result);
 
         }
     }

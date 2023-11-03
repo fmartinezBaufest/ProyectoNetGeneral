@@ -2,6 +2,7 @@ $(document).ready(function () {
     
     const searchInput = $('#searchInput');
     const suggestions = $('#suggestions');
+    const suggestions2 = $('#suggestions2');
 
     searchInput.on('input', function (e) {
         e.preventDefault();
@@ -9,6 +10,7 @@ $(document).ready(function () {
 
         if (query === '') {
             suggestions.empty();
+            suggestions2.empty();
         }
 
         // Realiza una solicitud al servidor o utiliza datos locales para obtener sugerencias.
@@ -17,17 +19,28 @@ $(document).ready(function () {
             type: "GET",
             contentType: "application/json",
             data: { datoBusqueda: query }, // Parámetros de búsqueda
-            success: function (data) {
+            success: function (response) {
                 // Procesa los resultados y muestra las sugerencias en 'suggestions'
-                suggestions.empty();
-
-               
-                data.forEach(function (result) {
-                    var suggestionItem = $('<li>' + result.name + ' ' + result.lastName + '</li>'); // Supongamos que 'nombre' es un campo en los resultados
-                    suggestions.append(suggestionItem);
+                //suggestions.empty();
 
 
-                });
+                if (response) {
+                    response?.data?.forEach(result => {
+                        var suggestionItem = $(`<option value="${result.name}">${result.name}</option>`);
+
+                        suggestions2.append(suggestionItem);
+
+                        //suggestions.append($("<option>").attr('value', result.id).text(result.name));
+
+                        
+
+
+
+                    });
+
+                    
+                }
+                
 
                
             },

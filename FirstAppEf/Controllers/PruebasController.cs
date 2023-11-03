@@ -2,6 +2,7 @@
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using MiServicioWebDePruebita;
 using System.Web;
+using WebServicePrueba;
 
 namespace FirstAppEf.Controllers
 {
@@ -17,6 +18,7 @@ namespace FirstAppEf.Controllers
         public async Task<IActionResult> Ver()
         {
         // Simular una operación asincrónica, como una llamada a una base de datos.
+
             var result = await GetDataAsync();
 
             return Ok(result);
@@ -37,18 +39,12 @@ namespace FirstAppEf.Controllers
 
             return Ok("ok");
         }
-        public IActionResult Index()
+        public  IActionResult Index()
         {
-            //var miServicio = new Service1Client();
 
-            //var miServicio2 = new ServicioEstadoPuestoClient();
+            var client = new MiWebServiceDePruebaClient(MiWebServiceDePruebaClient.EndpointConfiguration.BasicHttpBinding_IMiWebServiceDePrueba);
 
-            //var result = miServicio.DevolvemeUnaSumaAsync(4, 8).Result;
-
-            //var result2 = miServicio2.ConsultarEstadoBarrerasAsync().Result;
-
-            //ViewBag.Result = result;    
-
+            var r = client.DevolvemeElNombreAsync().Result;
             return View();
         }
         
