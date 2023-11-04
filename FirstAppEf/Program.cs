@@ -6,6 +6,7 @@ using FirstAppEf.Repository.InterfacesDao;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OfficeOpenXml;
+using WebServicePrueba;
 using static FirstAppEf.Repository.InterfacesDao.IRepository;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -30,6 +31,7 @@ builder.Services.AddScoped<IPeliculaDao, PeliculaDao>();
 builder.Services.AddScoped<IPeliculaBusiness, PeliculaBusiness>();
 
 builder.Services.AddScoped<IGeneroDao, GeneroDao>();
+builder.Services.AddScoped<IMiWebServiceDePrueba, MiWebServiceClient>();
 
 
 builder.Services.AddScoped(typeof(IBaseDao<,>), typeof(BaseDao<,>));

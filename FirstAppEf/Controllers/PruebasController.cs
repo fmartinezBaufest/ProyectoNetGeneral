@@ -8,6 +8,13 @@ namespace FirstAppEf.Controllers
 {
     public class PruebasController : Controller
     {
+        public IMiWebServiceDePrueba MiWebServiceDePrueba { get; }
+
+        public PruebasController(IMiWebServiceDePrueba miWebServiceDePrueba )
+        {
+            MiWebServiceDePrueba = miWebServiceDePrueba;
+        }
+
         [HttpPost]
         public async Task<IActionResult> Crear()
         {
@@ -40,11 +47,8 @@ namespace FirstAppEf.Controllers
             return Ok("ok");
         }
         public  IActionResult Index()
-        {
-
-            var client = new MiWebServiceDePruebaClient(MiWebServiceDePruebaClient.EndpointConfiguration.BasicHttpBinding_IMiWebServiceDePrueba);
-
-            var r = client.DevolvemeElNombreAsync().Result;
+        {          
+            //var r = this.MiWebServiceDePrueba.DevolvemeElNombreAsync().Result;
             return View();
         }
         
