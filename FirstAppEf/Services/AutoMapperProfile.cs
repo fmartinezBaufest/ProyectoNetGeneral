@@ -24,6 +24,11 @@ namespace FirstAppEf.Services
                 .ForMember(dest => dest.Image, opt => opt.Ignore());
 
             CreateMap<Genero, GeneroDto>();
+
+            CreateMap<AlquilerDto, Alquiler>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore());
+            CreateMap<Alquiler, AlquilerDto>();
+
         }
 
         private byte[] GetBytes(IFormFile file) 

@@ -30,6 +30,9 @@ builder.Services.AddScoped<IPersonaBusiness, PersonaBusiness>();
 builder.Services.AddScoped<IPeliculaDao, PeliculaDao>();
 builder.Services.AddScoped<IPeliculaBusiness, PeliculaBusiness>();
 
+builder.Services.AddScoped<IAlquilerDao, AlquilerDao>();
+builder.Services.AddScoped<IAlquilerBusiness, AlquilerBusiness>();
+
 builder.Services.AddScoped<IGeneroDao, GeneroDao>();
 builder.Services.AddScoped<IMiWebServiceDePrueba, MiWebServiceClient>();
 

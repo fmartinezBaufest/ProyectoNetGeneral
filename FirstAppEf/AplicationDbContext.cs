@@ -12,5 +12,6 @@ namespace FirstAppEf
         public DbSet<Persona> Personas { get; set; }
         public DbSet<Pelicula> Peliculas { get; set; }
         public DbSet<Genero> Generos { get; set; }
+        public DbSet<Alquiler> Alquileres { get; set; }
     }
 }

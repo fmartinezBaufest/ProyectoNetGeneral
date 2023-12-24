@@ -53,6 +53,10 @@ $(document).ready(function () {
             }
         });
 
+        self.miDato = ko.observable("pedro");
+
+        self.inpData = ko.observable("");
+
         setTimeout(function () {
             self.datosPrueba().nombre("Pepito");
         }, 5000); // 5000 milisegundos = 5 segundos

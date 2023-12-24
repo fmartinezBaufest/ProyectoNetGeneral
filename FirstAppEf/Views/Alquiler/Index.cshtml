@@ -2,6 +2,7 @@
 
 <div>
     <h3>Vas a alquilar @Model.Pelicula.Nombre</h3>
+    <input type="hidden" id="idPelicula" value="@Model.Pelicula.Id" />
 </div>
 
 <input class="form-control mt-5" list="datalistOptions" id="searchInput" placeholder="Buscar persona...">
@@ -21,6 +22,7 @@
             <td  data-bind="text: name"></td>
             <td  data-bind="text: lastName"></td>
             <td  data-bind="text: dni"></td>
+            <td hidden data-bind="text: id"></td>
         </tr>
        
     </tbody>
@@ -42,14 +44,19 @@
         <h5 class="card-title" data-bind="text: 'Dni: ' + selectedPerson().dni"></h5>
         <h5 class="card-title">Pelicula: @Model.Pelicula.Nombre</h5>
         <p class="card-text">Fecha de alquiler: @DateTime.Now</p>
-        <a href="#" class="btn btn-primary">Alquilar</a>
+        <input type="hidden"  />
+        <a class="btn btn-primary" data-bind="click: incrementClickCounter">Alquilar</a>
     </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 @section Scripts{
-    <script src="~/js/alquiler.js"> </script>
+    <script src="~/js/alquiler.js">
+      
+        </script>
+
+
 }
 
 <style>

@@ -9,11 +9,28 @@ namespace FirstAppEf.Controllers
     {
         public IPeliculaBusiness PeliculaBusiness { get; }
         public IPersonaBusiness PersonaBusiness { get; }
+        public IAlquilerBusiness AlquilerBusiness { get; }
 
-        public AlquilerController(IPeliculaBusiness peliculaBusiness, IPersonaBusiness personaBusiness)
+        public AlquilerController(IPeliculaBusiness peliculaBusiness, IPersonaBusiness personaBusiness, IAlquilerBusiness alquilerBusiness)
         {
             PeliculaBusiness = peliculaBusiness;
             PersonaBusiness = personaBusiness;
+            AlquilerBusiness = alquilerBusiness;
+        }
+
+        public IActionResult CrearAlquiler([FromBody]AlquilerDto alquiler)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new {error = "errorModel"});
+            }
+
+            alquiler.Fecha = DateTime.Now;
+
+            this.AlquilerBusiness.CrearAlquiler(alquiler);
+
+            return Json(new {result = "ok"});
+
         }
 
 
