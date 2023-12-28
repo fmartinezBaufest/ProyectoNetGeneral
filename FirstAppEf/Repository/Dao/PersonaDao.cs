@@ -27,13 +27,5 @@ namespace FirstAppEf.Repository.Dao
 
 
         }
-
-        public PersonaDto Actualizar(PersonaDto persona)
-        {
-
-            return this.Actualizar(persona);
-            
-
-        }
     }
 }

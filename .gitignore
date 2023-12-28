@@ -8,3 +8,10 @@ WcfService1/obj
 ConsoleApp1/bin
 ConsoleApp1/obj/Debug
 ConsoleApp1/obj
+/TestProject1/bin/Debug/net7.0/TestProject1.dll
+/TestProject1/bin/Debug/net7.0/TestProject1.pdb
+/TestProject1/obj/Debug/net7.0/ref/TestProject1.dll
+/TestProject1/obj/Debug/net7.0/refint/TestProject1.dll
+/TestProject1/obj/Debug/net7.0/TestProject1.dll
+/TestProject1/obj/Debug/net7.0/TestProject1.pdb
+*.lutconfig
