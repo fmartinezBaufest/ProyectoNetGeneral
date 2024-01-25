@@ -22,3 +22,7 @@ ConsoleApp1/obj
 /ConsoleAppPruebas/obj/Debug/net6.0/ConsoleAppPruebas.GeneratedMSBuildEditorConfig.editorconfig
 /ConsoleAppPruebas/obj/Debug/net6.0/ConsoleAppPruebas.GlobalUsings.g.cs
 /ConsoleAppPruebas/obj
+/ConsoleAppPruebas/bin/Debug/net6.0
+/TestProject1/bin/Debug/net7.0/FirstAppEf.dll
+/TestProject1/bin/Debug/net7.0/FirstAppEf.pdb
+/TestProject1/obj/Debug/net7.0/TestProject1.csproj.AssemblyReference.cache
