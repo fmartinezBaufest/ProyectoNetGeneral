@@ -15,3 +15,10 @@ ConsoleApp1/obj
 /TestProject1/obj/Debug/net7.0/TestProject1.dll
 /TestProject1/obj/Debug/net7.0/TestProject1.pdb
 *.lutconfig
+/ConsoleAppPruebas/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+/ConsoleAppPruebas/obj/Debug/net6.0/ConsoleAppPruebas.AssemblyInfo.cs
+/ConsoleAppPruebas/obj/Debug/net6.0/ConsoleAppPruebas.AssemblyInfoInputs.cache
+/ConsoleAppPruebas/obj/Debug/net6.0/ConsoleAppPruebas.assets.cache
+/ConsoleAppPruebas/obj/Debug/net6.0/ConsoleAppPruebas.GeneratedMSBuildEditorConfig.editorconfig
+/ConsoleAppPruebas/obj/Debug/net6.0/ConsoleAppPruebas.GlobalUsings.g.cs
+/ConsoleAppPruebas/obj
