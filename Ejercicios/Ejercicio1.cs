@@ -10,6 +10,11 @@ namespace Ejercicios
     {
         public void Execute()
         {
+            Figura circulo = new Circulo();
+
+            Figura rectangulo = new Rectangulo();
+            circulo.CalcularArea();
+            rectangulo.CalcularArea();
         }
     }
 
@@ -23,6 +28,14 @@ namespace Ejercicios
         public override void CalcularArea()
         {
             Console.WriteLine("Calculo el area del circulo");
+        }
+    }
+
+    public class Rectangulo : Figura
+    {
+        public override void CalcularArea()
+        {
+            Console.WriteLine("Calculo el area del rectangulo");
         }
     }
 }
